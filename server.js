@@ -1,10 +1,11 @@
 require("dotenv").config();
 
 // import libraries
-const path = require("path");
 const fs = require("fs");
+const path = require("path");
 const cors = require("cors");
 const morgan = require("morgan");
+const helmet = require("helmet");
 const express = require("express");
 const cookieParser = require("cookie-parser");
 
@@ -34,6 +35,7 @@ module.exports = async (modules) => {
 
   // middleware
   app.use(cors());
+  app.use(helmet());
   app.use(express.json());
   app.use(cookieParser());
   app.use(express.urlencoded({ extended: true }));
