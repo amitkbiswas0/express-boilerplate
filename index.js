@@ -1,5 +1,5 @@
 const logger = require("./utils/logger");
-const MODULES = ["./routes"];
+const MODULES = ["./api"];
 
 // catches unhandledRejection and uncaughtException
 // logs only in development
