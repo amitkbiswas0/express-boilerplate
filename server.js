@@ -10,6 +10,7 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 
 // custom utils
+const logger = require("./utils/logger");
 const { ErrorHandler, catchError } = require("./utils/error");
 
 // main app module
@@ -58,6 +59,6 @@ module.exports = async (modules) => {
 
   // run app
   app.listen(process.env.PORT, () => {
-    console.log(`Server Running @${process.env.HOST}:${process.env.PORT}`);
+    logger.info(`Server Running @${process.env.HOST}:${process.env.PORT}`);
   });
 };
